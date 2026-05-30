@@ -1,0 +1,31 @@
+
+# macOS
+
+.DS_Store
+
+# backups
+
+_backups/
+*.bak
+*.bak.*
+
+# secrets / environment
+
+.env
+.env.*
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+
+# temporary files
+
+tmp/
+*.tmp
+*.log
+
+# editor
+
+.vscode/
+.idea/
