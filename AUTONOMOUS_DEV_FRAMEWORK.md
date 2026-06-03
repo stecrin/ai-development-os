@@ -13,6 +13,7 @@ that matches the current task.
 | [SECURITY_RULES.md](./SECURITY_RULES.md) | Touching auth, secrets, production data, file uploads, external APIs/webhooks, infrastructure, or AI-specific security. |
 | [DEPLOYMENT_RULES.md](./DEPLOYMENT_RULES.md) | Branching, committing, CI/CD, deployment authority, pre-deploy checks, post-deploy verification, rollback, failed deployment response. |
 | [MEMORY_SYSTEM.md](./MEMORY_SYSTEM.md) | Recording or recalling project context: PROJECT_STATUS.md, PROJECT_SUMMARY.md, PROJECT_BACKLOG.md, DECISION_LOG.md, RETROSPECTIVE.md. |
+| [CONTEXT_MANAGEMENT_RULES.md](./CONTEXT_MANAGEMENT_RULES.md) | Multi-step tasks, large outputs, long sessions, or any risk of context overload. Minimal filesystem discipline, batch discipline, context hygiene. |
 
 ## Templates (copy into a project, then fill)
 
@@ -216,6 +217,9 @@ Do not:
 * install heavy dependencies without justification
 * ignore failing tests
 * hide uncertainty
+* list directories, scan the repository, or read unrelated files after a task is complete
+* use 1M context for routine documentation, summaries, checklists, diagrams, or small edits
+* continue working after the requested output is complete
 
 OUTPUT FORMAT AFTER EACH RUN
 

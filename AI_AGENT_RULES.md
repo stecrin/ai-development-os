@@ -92,3 +92,4 @@ dependencies. Don't wait for the end of the pipeline to find a security problem.
 - When blocked, drop back to Analyst rather than guessing.
 - **No role may invent facts.** If project context is missing, inspect the files or ask — never assume.
 - **Every role produces a short, concrete output** — recommendations, decisions, results. No long theory.
+- **Minimal filesystem & context discipline** — read only explicitly named files; create or edit only explicitly named targets; do not list directories, scan the repository, or read unrelated files. After completing a task, stop and report only: file changed, short summary, issues found, next step. Defers to [CONTEXT_MANAGEMENT_RULES.md](./CONTEXT_MANAGEMENT_RULES.md).

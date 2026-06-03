@@ -49,6 +49,7 @@ This framework solves those problems once, globally, so they don't need solving 
 | [`SECURITY_RULES.md`](./SECURITY_RULES.md) | Secrets, production data, input validation, external APIs/webhooks, file uploads, infrastructure, AI-specific security, severity levels. |
 | [`DEPLOYMENT_RULES.md`](./DEPLOYMENT_RULES.md) | Deployment authority, branching, commit gates, migration safety, CI/CD, pre/post-deploy checklists, failed deployment response, rollback. |
 | [`MEMORY_SYSTEM.md`](./MEMORY_SYSTEM.md) | Memory authority order, per-project memory files, lightweight Agile vocabulary, session start/end routines. |
+| [`CONTEXT_MANAGEMENT_RULES.md`](./CONTEXT_MANAGEMENT_RULES.md) | Context hygiene, batch discipline, minimal filesystem access, and prevention of unnecessary repository scans or 1M context usage during routine tasks. |
 
 ### Project templates
 

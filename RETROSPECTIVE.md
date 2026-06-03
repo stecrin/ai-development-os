@@ -92,9 +92,52 @@ AI Development OS — V1 Framework Build and First Validation
 
 ---
 
+---
+
+## Milestone name
+AIOS V1.1 — Home Lab Infrastructure Documentation Validation
+
+## Date
+2026-06-03
+
+## What was completed
+
+- 4 of 5 verification batches completed (cloudbridge-gw, web/app hosting, Maldaresti/Raspberry Pi, pfSense/VLAN). Batch 5 deferred — T-Pot not yet deployed.
+- Verified architecture summary produced. Cloudflare older architecture correctly marked as historical/superseded. Active architecture confirmed as cloudbridge-gw + Caddy + WireGuard.
+- DG-01, DG-02, DG-03 architecture specs created. Three draw.io diagrams generated and visually verified. `DIAGRAM_INDEX.md` updated.
+- Internal documentation and public-safe outputs produced as separate artefacts.
+- Live execution failure identified (1M context attempt + unnecessary filesystem actions) and corrected: Minimal Filesystem & Context Discipline Rule added to `CONTEXT_MANAGEMENT_RULES.md`, `AI_AGENT_RULES.md`, `AUTONOMOUS_DEV_FRAMEWORK.md`, `README.md`, and `PROJECT_BACKLOG.md`.
+
+## What worked well
+
+- **Batch discipline** — splitting infrastructure verification into scoped batches prevented context overload and kept each step focused.
+- **Fact/assumption separation** — verifying claims before writing documentation caught false assumptions that would have been published.
+- **Self-correction** — the AIOS identified its own execution failure during a live sprint and improved its operating rules. This is the first time the framework demonstrated the ability to learn from a real workflow problem.
+- **Diagram generation** — producing architecture specs and draw.io files from verified facts worked correctly and produced usable outputs.
+- **Historical context discipline** — superseded architecture was preserved accurately rather than deleted or overwritten.
+
+## What was difficult
+
+- **Context management** — Claude attempted to use 1M context and performed unnecessary directory listing during the sprint. Required intervention and a corrective rule addition.
+- **Deferred batch** — T-Pot batch could not be completed because the system is not yet deployed. Deferral was handled cleanly but represents an open item.
+
+## What we learned
+
+- The AIOS should not only guide project work — it must also be capable of improving its own operating rules after a live failure. The self-correction loop is a feature, not an exception.
+- Batch discipline is not just about context size. It also forces scope clarity: each batch has a defined start, verification method, and done condition before execution begins.
+- Public-safe and internal documentation must be treated as separate outputs from the start, not edited apart after the fact.
+
+## What still needs improvement
+
+- The full developer role pipeline (Architect → Developer → QA → Security → DevOps) has not been validated on a real feature addition.
+- Missing templates: `DECISION_LOG_TEMPLATE.md`, `PROJECT_BACKLOG_TEMPLATE.md`, `PROJECT_SUMMARY_TEMPLATE.md`, `RETROSPECTIVE_TEMPLATE.md`.
+- No formal version tag yet. A `v1.0` or `v1.1` release tag would make the validation boundary clear.
+
+---
+
 ## Next recommended milestone
 
-**Milestone: V1.1 — Full Role Pipeline Validation**
+**Milestone: V1.2 — Full Role Pipeline Validation**
 
 Target: validate the complete pipeline on a real feature addition in an active project.
 

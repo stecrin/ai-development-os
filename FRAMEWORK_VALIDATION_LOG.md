@@ -57,6 +57,64 @@ A project requiring:
 
 Candidate type: any active `~/Projects/gitrepo/` project with a clear next feature and an existing test suite.
 
+---
+
+## Validation date
+2026-06-03
+
+## Validation label
+**AIOS V1.1 — Home Lab Infrastructure Documentation Validation**
+
+## Validation project
+- **Name:** stefancringusi-site (Home Lab documentation)
+- **Path:** `~/Projects/stefancringusi-site`
+
+## What was tested
+1. Splitting a messy infrastructure project into structured verification batches (5 batches planned; 4 completed; 1 deferred — T-Pot not yet deployed).
+2. Batch 1: cloudbridge-gw verification.
+3. Batch 2: Web/app hosting droplet verification.
+4. Batch 3: Maldaresti / Raspberry Pi verification.
+5. Batch 4: pfSense / VLAN home network verification.
+6. Separating verified facts from assumptions before writing public documentation.
+7. Correcting false assumptions (Cloudflare older architecture marked as historical/superseded; current active architecture confirmed as cloudbridge-gw + Caddy + WireGuard).
+8. Producing a verified architecture summary, DG-01 / DG-02 / DG-03 spec files, and three draw.io diagram files.
+9. Updating `DIAGRAM_INDEX.md` with all generated diagrams.
+10. Generating and visually checking draw.io diagrams (DG-01, DG-02, DG-03).
+11. Producing internal documentation and public-safe outputs as separate artefacts.
+12. Identifying a live execution failure (1M context attempt + unnecessary filesystem actions) and implementing a corrective rule in the AIOS itself.
+
+## What worked
+- Batch discipline: splitting a large fuzzy project into scoped verification units worked correctly.
+- Fact/assumption separation: verified facts were distinguished from assumptions before any documentation was written.
+- Historical context handling: superseded architecture was preserved accurately rather than deleted or presented as current.
+- Diagram generation: architecture specs were translated into draw.io XML files and visually verified.
+- Public vs. internal output separation: internal verification notes and public-safe documentation were kept distinct.
+- Self-correction: a live execution failure triggered a rule improvement within the AIOS itself (Minimal Filesystem & Context Discipline Rule), demonstrating the framework can learn from real workflow failures.
+- Role discipline maintained throughout: PM, Analyst, and Documentation Maintainer roles stayed in scope.
+
+## Issue discovered and resolved
+Claude attempted to use 1M context and performed unnecessary filesystem actions (directory listing, broad reads) during the sprint. This was identified as a framework gap. The **Minimal Filesystem & Context Discipline Rule** was added to:
+- `CONTEXT_MANAGEMENT_RULES.md` (new specialist file)
+- `AI_AGENT_RULES.md` (Role rules section)
+- `AUTONOMOUS_DEV_FRAMEWORK.md` (specialist file table + ABSOLUTE DO NOT)
+- `README.md` (Core components table)
+- `PROJECT_BACKLOG.md` (item marked Completed)
+
+## What still needs testing
+- **Strategic Advisor, Architect, QA/Test Architect, Security Reviewer, DevOps Reviewer roles** — not exercised in this sprint.
+- **Feature development pipeline** — no code was written; only documentation was produced.
+- **DECISION_LOG.md** — not stress-tested with a real contested architectural decision.
+- **Multi-session memory recovery** — not tested at scale.
+- **`may-deploy-with-approval`** — not exercised.
+- **Conflict resolution** — memory authority order not tested against a real conflicting instruction.
+
+## Result
+**Framework V1.1 validated for infrastructure documentation, batch verification discipline, fact/assumption separation, diagram generation, and self-correction of operating rules.**
+
+The framework handled a real, messy, multi-system project correctly. The self-correction capability — identifying a live failure and improving its own rules — is a meaningful new capability demonstrated for the first time.
+
+---
+
 ## Notes for future Claude sessions
 - This log exists to prevent re-testing what already works and to focus validation effort on the untested roles and scenarios listed above.
 - Do not treat this as proof that the full autonomous pipeline is validated. It is not.
