@@ -86,6 +86,24 @@ Full role definitions, including handoffs and outputs, are in [`AI_AGENT_RULES.m
 
 ---
 
+## Workflow layer
+
+The framework includes a workflow layer that turns common development situations into repeatable, step-by-step operating procedures.
+
+Roles define what Claude can do. Safety gates define what requires human approval. Workflows define the sequence — what to inspect, in what order, with what gates, for a specific situation. Each workflow names a recommended role, includes a gate at every step, and ends with a concrete output the human can review before deciding what happens next.
+
+Claude does not run workflows automatically. A workflow is invoked explicitly, and human approval is required at each gate before proceeding.
+
+| Workflow | Use when |
+|----------|----------|
+| [`workflows/project-inspection.md`](./workflows/project-inspection.md) | You have returned to a project and need to safely recover its current state before doing anything. |
+| [`workflows/pre-commit-review.md`](./workflows/pre-commit-review.md) | You are about to commit and want a structured safety check covering secrets, personal data, branch state, and staged files. |
+| [`workflows/documentation-update.md`](./workflows/documentation-update.md) | You are creating or updating documentation and want a controlled process with source verification and private-data checks. |
+
+See [`workflows/WORKFLOW_INDEX.md`](./workflows/WORKFLOW_INDEX.md) for the full index, human approval rule, and situation-to-workflow lookup.
+
+---
+
 ## Lightweight Agile layer
 
 The framework includes a minimal Agile vocabulary for tracking work across sessions — no sprints, no ceremonies, no story points unless the project has multiple humans who need them.
@@ -222,6 +240,12 @@ _AI_RULES/
 ├── FRAMEWORK_VALIDATION_LOG.md   ← Validation history
 ├── PORTFOLIO_PROJECT_BRIEF.md    ← Portfolio story and website content
 ├── README.md                     ← This file
+│
+├── workflows/                    ← Workflow layer: step-by-step operating procedures
+│   ├── WORKFLOW_INDEX.md         ← Workflow index and human approval rule
+│   ├── project-inspection.md     ← Inspect project state at session start
+│   ├── pre-commit-review.md      ← Safety check before committing
+│   └── documentation-update.md   ← Controlled documentation creation and editing
 │
 └── _backups/                     ← Timestamped backups before edits
 ```
