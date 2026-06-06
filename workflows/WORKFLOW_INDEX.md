@@ -28,7 +28,7 @@ Match your situation to the description below. If no workflow fits, use the Defa
 |-----------|----------|
 | I returned to a project and don't fully remember its state | [project-inspection.md](./project-inspection.md) |
 | I am about to commit and want a final safety check | [pre-commit-review.md](./pre-commit-review.md) |
-| I need to update or create documentation | `documentation-update.md` *(planned)* |
+| I need to update or create documentation | [documentation-update.md](./documentation-update.md) |
 
 ---
 
@@ -56,13 +56,13 @@ See [pre-commit-review.md](./pre-commit-review.md) for the full procedure.
 
 ---
 
-## Planned workflows
-
 ### documentation-update.md
 
-**Status:** Planned
+**Status:** Available
 
-**Planned use:** When a README, guide, reference file, or in-project documentation needs to be created or updated. Guides Claude through reading existing docs, drafting, and requesting approval before writing.
+**Use when:** You are creating a new documentation file or updating an existing one. Covers audience identification, source verification, public wording checks, private-data checks, and diff review. Distinguishes between new and update tasks, and between public-facing and internal documentation.
+
+See [documentation-update.md](./documentation-update.md) for the full procedure.
 
 ---
 
