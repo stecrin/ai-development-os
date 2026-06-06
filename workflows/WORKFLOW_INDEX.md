@@ -27,7 +27,7 @@ Match your situation to the description below. If no workflow fits, use the Defa
 | Situation | Workflow |
 |-----------|----------|
 | I returned to a project and don't fully remember its state | [project-inspection.md](./project-inspection.md) |
-| I am about to commit and want a final safety check | `pre-commit-review.md` *(planned)* |
+| I am about to commit and want a final safety check | [pre-commit-review.md](./pre-commit-review.md) |
 | I need to update or create documentation | `documentation-update.md` *(planned)* |
 
 ---
@@ -46,13 +46,17 @@ See [project-inspection.md](./project-inspection.md) for the full procedure.
 
 ---
 
-## Planned workflows
-
 ### pre-commit-review.md
 
-**Status:** Planned
+**Status:** Available
 
-**Planned use:** Before any commit. Runs git diff, checks for secrets, verifies the branch name, confirms the commit message convention, checks no unrelated files are staged, and reports a commit readiness verdict.
+**Use when:** You are about to commit and want a structured safety check before running `git commit`. Covers branch verification, staged file review, secrets and personal-data detection, public repository checks, and documentation consistency. Produces a commit readiness verdict: safe to commit / safe after minor fix / not safe to commit.
+
+See [pre-commit-review.md](./pre-commit-review.md) for the full procedure.
+
+---
+
+## Planned workflows
 
 ### documentation-update.md
 
